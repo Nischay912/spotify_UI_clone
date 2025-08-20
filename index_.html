@@ -1,12 +1,11 @@
-<!-- continuation made new as comments were becoming over-crowded there. -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify - Web Player: Music for everyone</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/utility.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css" />
   </head>
   <body>
     <div class="container flex bg-black">
@@ -15,7 +14,7 @@
           <img width="38px" class="invert" src="svgs/close.svg" alt=""> 
         </div>
         <div class="home bg-grey m1 rounded p1">
-          <div class="logo"><img width=110px class="invert" src="svgs/logo.svg" alt="" /></div>
+          <div class="logo"><img width="110px" class="invert" src="svgs/logo.svg" alt="" /></div>
           <ul>
             <li><img class="invert" src="svgs/home.svg" alt="home" />Home</li>
             <li><img class="invert" src="svgs/search.svg" alt="search" />Search</li>
@@ -27,9 +26,7 @@
             <h2>Your Library</h2>
           </div>
           <div class="songlist">
-            <ul>
-
-            </ul>
+            <ul></ul>
           </div>
           <div class="footer">
             <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
@@ -61,39 +58,7 @@
         </div>
         <div class="playlists">
           <h1>Spotify Playlists</h1>
-          <div class="cardContainer">
-            <!-- step279: we made one more card below and gave data-attribute "cs" to this and next card to "ncs" based on the 2 folders we had in "songs" folder used in the javascript in the previous steps earlier. --> 
-             <!-- NOTE THAT : these "cs" "ncs" are folders in the /songs/ folder : will be renamed once the project is complete so dont be confused at that time where did they go.. -->
-
-            <!-- step355: now these cards commented out that we were using as now we have copied this card code in javascript file and updating its title and description from there itself : so we keep this empty only here and update it from javascript directly from there.-->
-
-            <!-- <div data-folder="cs" class="card">
-              <div class="play">
-                <div class="play-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="black">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </div>
-              </div>
-              <img src="https://i.scdn.co/image/ab67706f00000002b55b6074da1d43715fc16d6d" alt="">
-              <h2>Happy Hits</h2>
-              <p>Hits to boost your mood and fill your happiness!</p>
-            </div>
-
-            <div data-folder="ncs" class="card">
-              <div class="play">
-                <div class="play-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="black">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </div>
-              </div>
-              <img src="https://i.scdn.co/image/ab67706f00000002b55b6074da1d43715fc16d6d" alt="">
-              <h2>Happy Hits</h2>
-              <p>Hits to boost your mood and fill your happiness!</p>
-            </div> -->
-            
-          </div>
+          <div class="cardContainer"></div>
           <div class="playbar">
             <div class="seekbar">
               <div class="circle"></div>
@@ -119,6 +84,6 @@
         </div>
       </div>
     </div>
-    <script src="javascript/script2.js"></script>
+    <script src="script_.js"></script>
   </body>
 </html>
