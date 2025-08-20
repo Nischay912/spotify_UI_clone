@@ -1,0 +1,1 @@
+we have better responsoveness on phones and smaller devices & we have also made it to load playlists dynamically without using backend.

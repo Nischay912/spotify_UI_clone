@@ -1,0 +1,187 @@
+<!-- step1 : We are cloning : open.spotify.com : but we see on doing ctrl+shif+I : that its not responsive i.e. its not properly adjusting as device screen decreases : but our website will be responsive and adjust to screen's size automatically. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- step77: INSPECT > CONSOLE > document.title > get title from original page > copy and use it here -->
+     <!-- NOTE :Then we also on the open.spotify.com webiste : just at end add : ".favicon.ico" > download and save by name "favicon.ico" here > go to webpage > hard-reload it using : CTRL+SHIFT+R > and the spotify icon now comes in your webpage's title too. -->
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/utility.css" />
+  </head>
+  <body>
+    <!-- step5 : we make a container class holding the left and rigth parts and give it "flex" class as we want left and right part to come on sides of each other not one below the other-->
+    <div class="container flex bg-black">
+      <!-- step2 : we have two sections left part and right part on website : one covers 25% lets say and other covers 75% & give border class to them too to look sepearetd initially and so we will remove it later when no more needed.-->
+      <div class="left">
+        <!-- step203: we put the cross section to be displayed in it on top right in mobile devices to close back the hamburger icon and vanish the left section there. -->
+         <div class="close">
+          <!-- step204: put invert class to make the black svg to convert to white and be visible now there & put its width size as per your wish. -->
+          <img width="38px" class="invert" src="svgs/close.svg" alt=""> 
+         </div>
+        <!-- step8 : in left part , we had 2 boxes : "home" box & "library" box one below the other -->
+        <!-- step16 : give bg-black class to both home and library boxes -->
+        <!-- step20: give the bg-grey to inside boxes and bg-black to main background boxes like container like in the original website  -->
+        <!-- step23: give the rounded and margin classes to home and library boxes : so that they look like the website -->
+        <!-- step26: put p1 class in home and library class now to maintain same structure in all of them. -->
+        <div class="home bg-grey m1 rounded p1">
+          <!-- step11 : lets put logo too here inside the top box named "home" only. We go on inspect > select the logo on top left & right click on it to copy element > paste svg in "logo.svg" file : but its not displayed still : we see on google > svg specs > on stack overflow tells that we should include > xmlns="http://www.w3.org/2000/svg" there too as we are using "svg" after making it a seperate file and not using directly > so we add this in logo.svg file there : after <svg()...here...)> .... </svg> : late rif needed again anywhere , we'll do : start+V to open clipboard and then get all history of what we copied earlier.-->
+          <!-- step18: put invert class wherever you want to invert the images at. -->
+          <div class="logo"><img width=110px class="invert" src="svgs/logo.svg" alt="" /></div>
+          <!-- step9 : get svg of icons there and copy here in new svg files. -->
+          <!--step10 : better to keep them as list items to look even better & put "alt" too to show that text incase image appearing shows some error. -->
+          <ul>
+            <li><img class="invert" src="svgs/home.svg" alt="home" />Home</li>
+            <li><img class="invert" src="svgs/search.svg" alt="search" />Search</li>
+          </ul>
+        </div>
+        <div class="library bg-grey m1 rounded p1">
+          <div class="heading">
+            <!-- step29: make the next library section now. -->
+            <!--  -->
+            <!-- step30: invert colors of image to make black to white and white to black -->
+            <img class="invert" src="svgs/playlist.svg" alt="" />
+            <!-- step30: add the text written there in this library box now -->
+            <h2>Your Library</h2>
+            <!-- step96 : now lets list all the song card now in the library section : but due to flex box "heading" its coming not one below the other : so we shift this after header class. -->
+          </div> <!--close heading as we only had this much in heading part-->
+          <!-- step97 : after shifting outside header : we lets put inside a div for easiness in styling after this. -->
+          <div class = "songlist">
+              <ul>
+              <!-- <li>Song Name</li>  : we want song names to be displayed here as list-items-->
+               <!-- step105: now we try to make music cards for each song here : we open any webpage of music player like youtube music and try to replicate its card showing music name and singer names and all -->
+                <!-- <li> -->
+                  <!-- step106: we now put a music icon svg from hugeicons.com here for the card and put invert class we had earlier to invert colors from black to white and vice-versa.-->
+                  <!-- <img class="invert" src="music.svg" alt=""> -->
+                  <!-- step108: make div tags for song name and artist names inside an "info" div -->
+                   <!-- <div class="info"> -->
+                        <!-- <div>Song Name</div> -->
+                        <!-- <div>Song Artist</div> -->
+                   <!-- </div> -->
+                   <!-- <div class="playnow"> -->
+                      <!-- step 111: now there should be a play button for music to play in the card : so we use the play.svg we had here and invert its color form black to white and vice-versa : and add a text for play now too here. -->
+                       <!-- <span>Play Now</span> :span used to be in same line as button -->
+                       <!-- <img class="invert" src="play.svg" alt=""> -->
+                   <!-- </div> -->
+                <!-- </li> -->
+              </ul>
+          </div>
+            <!-- step33 : to make footer ; we go to inspect > select footer > right click > copy element > chatgpt > remove all classes thats there unnecessary for us > tell to remove classes and give plain html > paste here & wjole this kept inside library box only like its there. -->
+            <div class="footer">
+                <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
+                <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
+                <div><a href="https://www.spotify.com/jp/legal/privacy-policy/"><span>Privacy Policy</span></a>
+                        </div>
+                <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
+                <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a></div>
+                <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
+            </div>
+          </div>
+      </div>
+      <!-- step45: we now give the same classes bg-grye and all like we had in left side section : but m1 not given else the margin being given in step46 wont work as inline css has more specificity than it. -->
+       <!-- step47: remove p1 too if you want the navbar to be there at top exactly in the right section with no padding from the top border-->
+      <div class="right bg-grey rounded">
+        <!-- step40: now we start doing work on the right part : lets make the header of it first -->
+         <div class="header">
+            <div class="nav">
+              <!-- step197: we put the hamburger here as an image ; no need to put inside div as we have already made its display : block in media query of it. : put invert in it to make it visible as we had color inverted here in navbar earlier : to make black look white and vice-versa : so we also give it some width to look bigger (NOTE: width is given as just number not with "px" when giving as inline css here) -->
+
+              <!-- step198: the arrow svgs and hamburger were not looking good on below the other : so lets make them a flexbox together by placing all three svgs inside a common <div> "hamburgercontainer" class here. -->
+              <div class="hamburgercontainer">
+                    <img width="40" class="invert hamburger" src="svgs/hamburger.svg" alt="">
+                      <!-- step41: we add the arrow buttons from hugeicons.com that were there in the navbar on the original website too. -->
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
+                        stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <!--step42: we changed its stroke = "" to #ffffff to make it white colored whihc was black by default ; could have used class invert too to invert its color from white to black and vice-versa -->
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
+                        stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+              </div>
+            </div>
+            <div class="buttons">
+                <button class="signupbtn">Sign up</button>
+                <button class="loginbtn">Log in</button>
+            </div>
+         </div>
+         <!-- step48: we now make the playlists section below the header section. -->
+          <div class="playlists">
+            <!-- write the text at top of it -->
+            <h1>Spotify Playlists</h1> 
+            <!-- container containing the playlists cards made now -->
+            <div class="cardContainer">
+            <!-- step50 :now we design each card present in the section : we'll make one card and then replicate all of them as they are all same design only just images and texts are different in each of them. -->
+              <div class="card">
+                <!-- step61: we create a play class for play button inside the "card" -->
+                <div class="play">
+                  <!-- step62: we now go on hugeicons.com & then we search for play button and copy that svg here : then we can tell "CHATGPT" to put the svg inside a green circle and place play button svg at centre of it -->
+                   <!-- step63 : chatgpt gives us a <div> with inline css followed by <svg> ... </svg> </div> : so we go on inspect > select the button and the styles in it comes on right side in the inspect one below the other like a list : we copy it to the clipboard & remove div from here below and then use the copied css , in style.css there in next step. -->
+                  <!-- BETTER TO WRAP SVG IN A "DIV" AS SVG IS ONLY THE PLAY ARROW BUTTON : WE HAVE CIRCLE TOO WHICH IS A <DIV> SO KEEP IN A DIV AND STYLE THI SIN STEP64 NEXT.... -->
+                  <div class="play-button">
+                    <!-- we told CHATGPT to give svg for solid black arrow and it gave us : so we put that svg now here. -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="black">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                        <path d="M18.8906 12.846C18.5371 14.189 16.8667 15.138 13.5257 17.0361C10.296 18.8709 8.6812 19.7884 7.37983 19.4196C6.8418 19.2671 6.35159 18.9776 5.95624 18.5787C5 17.6139 5 15.7426 5 12C5 8.2574 5 6.3861 5.95624 5.42132C6.35159 5.02245 6.8418 4.73288 7.37983 4.58042C8.6812 4.21165 10.296 5.12907 13.5257 6.96393C16.8667 8.86197 18.5371 9.811 18.8906 11.154C19.0365 11.7084 19.0365 12.2916 18.8906 12.846Z" 
+                        stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+
+                </div>
+                <!-- step51 : we have image , then h2 , then paragraph in the card , so we put it one after the other. We go to inspect to get all the images and then we will download it and use it : its better to download else it may be removed from your website too if server of spotify goes down too. -->
+                <img src="https://i.scdn.co/image/ab67706f00000002b55b6074da1d43715fc16d6d" alt="">
+                <h2>Happy Hits</h2>
+                <p>Hits to boost your mood and fill your happiness!</p>
+              </div>
+
+            </div>
+            <!-- step78: lets design the playbar to play the music now. -->
+            <div class="playbar">
+              <!-- step126: lets make a seekbar now -->
+               <div class="seekbar">
+                    <!-- step128: now we put a circle in this seekbar that will move as the song plays. -->
+                     <div class="circle"></div>
+               </div>
+              <!-- step160: we put songinfo , buttons and songtime in a flexbox as we want them to come in a single line not one below the other in the playbar there. -->
+
+              <div class="abovebar">
+
+              <!-- step83: we now make the section to display the song's name and a songtime section too below the playbuttons as we want the playbar to have song name , then buttons then the song duration displayed there. -->
+               <div class="songinfo">
+
+               </div>
+              <!-- step81: we now add the "svg" files here inside the playbar , in a seperate class "playbuttons" now. -->
+                <div class="playbuttons">
+                  <!-- step154 : lets give seperate id's to them so that they can be accessed individually in the javascript in next steps ahead. -->
+                   <!-- can add width like this to increase size of buttons if needed & we thus whenever put width as inline css , we put just the number not px her e; its put when doing in .css file ; not in inline css : REMEMBER THIS ALWAYS. -->
+                  <img width="35" id="prev" src="svgs/prev.svg" alt="">
+                  <img width="35" id="play" src="svgs/play.svg" alt="">
+                  <img width="35" id="next" src="svgs/next.svg" alt="">
+                </div>
+                <!-- step246: lets make the duration and volume to come in a single div , so that can be made flexbox together later if needed. -->
+                <div class="timevol">
+                    <div class="songtime">
+                      <!-- we keep nothing here as javascript has to come here to replace its innerhtml with duration of song. -->
+                    </div>
+                        <div class="volume">
+                          <!-- step251: last step increased size of icon so lets adjust it : NOTE THAT : can add width like this to increase size of buttons if needed & we thus whenever put width as inline css , we put just the number not px her e; its put when doing in .css file ; not in inline css : REMEMBER THIS ALWAYS.  -->
+                            <img width="25" src="svgs/volume.svg" alt="">
+                            <!-- step249: lets place a range type input here to look like a slidebar input for volume here. -->
+                            <div class="range">
+                                <input type="range" name="volume" id="">
+                            </div>
+                        </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <script src="javascript/script.js"></script>
+  </body>
+</html>

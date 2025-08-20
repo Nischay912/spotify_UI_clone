@@ -1,0 +1,124 @@
+<!-- continuation made new as comments were becoming over-crowded there. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/utility.css" />
+  </head>
+  <body>
+    <div class="container flex bg-black">
+      <div class="left">
+        <div class="close">
+          <img width="38px" class="invert" src="svgs/close.svg" alt=""> 
+        </div>
+        <div class="home bg-grey m1 rounded p1">
+          <div class="logo"><img width=110px class="invert" src="svgs/logo.svg" alt="" /></div>
+          <ul>
+            <li><img class="invert" src="svgs/home.svg" alt="home" />Home</li>
+            <li><img class="invert" src="svgs/search.svg" alt="search" />Search</li>
+          </ul>
+        </div>
+        <div class="library bg-grey m1 rounded p1">
+          <div class="heading">
+            <img class="invert" src="svgs/playlist.svg" alt="" />
+            <h2>Your Library</h2>
+          </div>
+          <div class="songlist">
+            <ul>
+
+            </ul>
+          </div>
+          <div class="footer">
+            <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
+            <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
+            <div><a href="https://www.spotify.com/jp/legal/privacy-policy/"><span>Privacy Policy</span></a></div>
+            <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
+            <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a></div>
+            <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="right bg-grey rounded">
+        <div class="header">
+          <div class="nav">
+            <div class="hamburgercontainer">
+              <img width="40" class="invert hamburger" src="svgs/hamburger.svg" alt="">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="signupbtn">Sign up</button>
+            <button class="loginbtn">Log in</button>
+          </div>
+        </div>
+        <div class="playlists">
+          <h1>Spotify Playlists</h1>
+          <div class="cardContainer">
+            <!-- step279: we made one more card below and gave data-attribute "cs" to this and next card to "ncs" based on the 2 folders we had in "songs" folder used in the javascript in the previous steps earlier. --> 
+             <!-- NOTE THAT : these "cs" "ncs" are folders in the /songs/ folder : will be renamed once the project is complete so dont be confused at that time where did they go.. -->
+
+            <!-- step355: now these cards commented out that we were using as now we have copied this card code in javascript file and updating its title and description from there itself : so we keep this empty only here and update it from javascript directly from there.-->
+
+            <!-- <div data-folder="cs" class="card">
+              <div class="play">
+                <div class="play-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="black">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <img src="https://i.scdn.co/image/ab67706f00000002b55b6074da1d43715fc16d6d" alt="">
+              <h2>Happy Hits</h2>
+              <p>Hits to boost your mood and fill your happiness!</p>
+            </div>
+
+            <div data-folder="ncs" class="card">
+              <div class="play">
+                <div class="play-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="black">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <img src="https://i.scdn.co/image/ab67706f00000002b55b6074da1d43715fc16d6d" alt="">
+              <h2>Happy Hits</h2>
+              <p>Hits to boost your mood and fill your happiness!</p>
+            </div> -->
+            
+          </div>
+          <div class="playbar">
+            <div class="seekbar">
+              <div class="circle"></div>
+            </div>
+            <div class="abovebar">
+              <div class="songinfo"></div>
+              <div class="playbuttons">
+                <img width="35" id="prev" src="svgs/prev.svg" alt="">
+                <img width="35" id="play" src="svgs/play.svg" alt="">
+                <img width="35" id="next" src="svgs/next.svg" alt="">
+              </div>
+              <div class="timevol">
+                <div class="songtime"></div>
+                <div class="volume">
+                  <img width="25" src="svgs/volume.svg" alt="">
+                  <div class="range">
+                    <input type="range" name="volume" id="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="javascript/script2.js"></script>
+  </body>
+</html>

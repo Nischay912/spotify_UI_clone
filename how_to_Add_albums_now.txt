@@ -1,0 +1,7 @@
+you can now make albums by these steps:
+
+-create a folder inside /songs/
+-name it whatever you want , won't be displayed
+-create info.json in it with title and description by name "info.json" only as it has been set in javacript
+-save cover image in it by "cover.img" name only as it has been set in javacript
+-add whatever music you want in it and you are ready to go now !! 😊😁

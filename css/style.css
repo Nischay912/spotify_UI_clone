@@ -1,0 +1,700 @@
+/* step27: we import all the fonts by adding all them in cart and iporting clubbe d link of font we want using whatfont extension and then seeing font and importing from google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* step267: we make a variable to help change the opacity of the green button when hovered on the card sin playlists. */
+:root{
+  --a:0; /*opacity 0 initially of those green play buttons on cards set here.*/
+}
+
+/* step13: we make all margins and padding given by browser by default to set to 0 initially / reset them */
+* {
+  margin: 0;
+  padding: 0;
+  /* step28: we put this font from google fonts there where we imported in "*" to make it our webpage's default font. */
+  font-family: "Roboto", sans-serif;
+}
+/* step3 : making temporary border to view the left and right boxes we created : will remove it later. */
+.border {
+  border: 2px solid red;
+  /* step7 : we give "margin" to them so that they look seperated from each other  */
+  margin: 3px;
+}
+
+/* step6: give the decided 25% and 75% width (decided in step2) to them*/
+.left {
+  width: 25vw;
+  /* its made as viewport width so that even if screen size decreases , it still remains 25% of that new screen's size & so on.... ; same for ".right" too */
+  /* step14: give padding in the left side box as per the need : can go on inspect and do and then copy here */
+  padding: 10px;
+}
+.right {
+  width: 75vw;
+}
+/* step12 : lets style the <li> there inside home class ka <ul> */
+.home ul li {
+  /* to remove the bullet points there */
+  list-style: none;
+  /* to make them come in a single line */
+  display: flex;
+  /* go to inspect (CTRL + SHIFT + I) and adjust width of icons and gap of them with the text written and then whatever feels good from there , paste here. */
+  width: 14px;
+  gap: 15px;
+  /* step25: give paddings to make items look sepearetd from each other */
+  padding-top: 14px;
+  /* step29: make it bold like on the website */
+  font-weight: bold;
+}
+/* step24: put padding inside home class inorder to make text inside it appear a bit sepearated from outer border : better to have this padding in a sepearte p1 utility class to maintain it everywhere wherever we use it : so see utiltiy class there */
+/* .home{
+     padding: 10px; 
+} */
+/* step31: we put same width of image in library now that we used in home box there in <li> above */
+.heading {
+  display: flex;
+  gap: 15px;
+  font-weight: bold;
+  width: 100%;
+  align-items: center;
+  /* give some padding now to the heading box we have made */
+  padding: 23px 14px;
+  /* adjust font size of text */
+  font-size: 13px;
+}
+/* step32 : target image directly to adjust width and thus its size as height sadjust automatically when width specified and vice-versa */
+.heading img {
+  width: 20px;
+}
+/* step34: design the footer as per the website we had. */
+.footer {
+  /* as we want it to not come one below the other so make it flexbox */
+  display: flex;
+  font-size: 10px;
+  /* to add gaps between them */
+  gap: 13px;
+  /* step38: give position absolute so that it is adjusted to bottom of its nearest parent who is not static i.e. library whom we made realtive positioned in the previous step. */
+  position: absolute;
+  bottom: 0px;
+  /* padding given to make it come a bit away from the bottom border of container there : only top-bottom padding given.*/
+  padding: 10px 0px;
+}
+/* step35 : change color fo the anchor tags */
+.footer a {
+  /* to target the anchor tags and change color of them */
+  color: grey;
+}
+/* step36: set minim height of library box so that it remians of a particular height */
+.library {
+  /* adjusted on inspect based on what height we want : preferred to do "vh" so that whatever screen is the e: it becomes 80 of its viewport height (vh) */
+  min-height: 80vh;
+  /* step37: give relative position to this so that footer can be sent to bottom relative to this */
+  position: relative;
+}
+/* step39 : make the default color of body black and color of text white to look in the background if any spaces left there. */
+body {
+  background-color: black;
+  color: white;
+}
+/* step43: we now here makes the header of right section to flexbox to make buttons and arrows to come in the same line */
+.header {
+  display: flex;
+  /* done on inspect by typing justify content then using arrow keys to see which value suits the best , then copied here. */
+  justify-content: space-between;
+  /* step46: we have to now give some background color to make the top header navbar look a bit different. */
+  background-color: rgb(34, 34, 34);
+}
+/* step44: now we : target all (*) direct children of header i.e. the buttons we had : we design them now */
+.header > * {
+  padding: 20px;
+}
+
+/* step46: we give margin to the right section now from top bottom that we want : not from left rigth as already much margin is there */
+.right {
+  margin: 16px 0px;
+  /* but we need to remove m1 margin else this wont work that was there in inline css there as specificity of inline css is greater by rule. */
+}
+
+.playlists {
+  /* step49: we give padding to it to come a bit inwards from the borders */
+  padding: 16px;
+}
+
+/* step226: we now put pargin on the h1 in playlists section as "spotify plylists" text was needing some spaces from the side-borders on the webpage. */
+.playlists h1{
+  padding: 13px;
+}
+
+.playlists .card {
+  /* step52: we now go on inspect and try to give border first to the card so that we can see where is the border of the card and will later comment it out after done. */
+  /* border: 2px solid red; */
+  /* step53: then on inspect only go and choose proper width of how much you want the card to be in and set it here. */
+  /* width: 250px; */
+  /* step54: now we can change the width of card now with image being fit inside it and being resized together : since we have used object fit to make it fit in the container and cover 100% of the container in the previous step. */
+  width: 200px;
+  /* step56: give background color by doing inspect on original page > click on any color box there > select pencil there and go and click on color you want > copy the code and use. */
+  background-color: #252525;
+  /* step57: to make padding to card : so that all elements in the card gets seperation from the card border */
+  padding: 10px;
+  /* step58: to make the border be curved */
+  border-radius: 5px;
+    /* step65: make card as position relative ; so that we can make the play button be positioned in next step relative to it. */
+    position: relative;
+    /* step266: we want to have transition to change the background color of hover we are doing in previous step265 : so now it changes and removes color in 0.9s to look like a better transition*/
+    transition: all .9s; /*this applies transition on all elements in card but that green play button doesn't comes by a transition now too along with the background color changed to black too when cursor is hovered over the card anywhere as that was a seperate button placed over the card and was not part of the card : SO : later when we override this transition in ".play" class : the play button comes by that transition and not this one : this transition is for all elements of the card class only; and not for the button positioned over it.*/
+}
+
+/* step55: now we give top padding to all direct child elements in the card i.e. for example if we have --
+<div class="card">
+  <h2>Title</h2>           <!-- selected -->
+  <p>Description</p>       <!-- selected -->
+  <div>                    <!-- selected -->
+    <span>Nested</span>    <!-- NOT selected, because it's a grandchild not direct child -->
+  </div>
+</div>
+ : thus image and texts all get the padding from its top like image from top border and texts from img and so on : everywhere top padding comes there . */
+.card > * {
+  padding-top: 10px;
+}
+
+/* step54 : we saw in css , we use object fit to make image come in original aspect ratio in the given width  */
+.card img {
+  /* to make the image take 100% width of its container */
+  width: 100%;
+  /* to make it fit in the given width without distroying original aspect ratio. */
+  object-fit: contain;
+}
+
+.cardContainer {
+  /* step59: now we make the container flexbox so that cards comes in same line ; not one below the other. */
+  display: flex;
+  /* for gaps between the card elements in the container */
+  gap: 10px;
+  /* to send it to next line once the line ends with cards */
+  flex-wrap: wrap;
+  /* step60: margin give to the container ; so that the card gets seperated from the top header */
+  margin: 30px;
+   /* step69: lets make a scroll bar now ; needed if number of playlists cards added increases very much */
+   /* see step70 in utility.css for the CHTGPT CODE scrollbar there. */
+   /* made auto and made overflow-y to have a vertical scroll bar only and the scroll bar will come only when needed now */
+   overflow-y: auto;
+   /* to create a scroll bar covering 70vh view height of the device's screen : 70vh given so that some space is left below it too for other things to be added there too*/
+      /* step355: when scrolling down: cards were hiding behind the playbar below on the webpage : so we decrease the max-height from 70 to 60 here below. */
+   max-height: 60vh; 
+}
+
+/* step64: put the css given by chatgpt from inspect taken & put in the div class here : dont style svg only like .play svg : as it then styles only the arrow of play which was svg but we want to position and style circle too ; so we select both of them here bu putting inside a div class play-button in "html" there.... */
+/* now we can adjust it as per our choice now. */
+.play-button{
+    /* height and width adjusted as per our choice from inspect and then copied here */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* to get exact color we can go on inspect > select the button by finding in the code lines ther e> then on right side i inspect at top under styles > click :hov > tick hover to force hover then choose its color easily from any color box > choosing pen there and taking pen on that color and then getting color code & using it here : IF THAT NOT WORKS : use extension of COLORZILLA to get it and paste code here. */
+    background-color: rgb(58, 225, 118);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* step66: make it position absolute & now it can be placed inside the card that was relative parent of it & positioned at desired pixels from top and bottom | right and left. */
+    position:absolute;
+    /* use inspect to adjust top and right easily by seeing webpage there & copy the calculated final value here. */
+    top:170px;
+    right:16px;
+}
+/* step67 : to adjust size of svg too based on new height-width of the green circle */
+.play-button svg{
+    width: 28px;
+}
+.play{
+    /* step68: we want the play button to come only when we hover cursor on it : so make its opacity 0 to be invisible until cursor moved there.
+    If we go on inspect and select the button and write in element styles that : opacity :1 and top:170px where we want it to come finally after transition & then we make top : 273 instead of 170px in .play-button css ; also in ".play-button" we add transition : all 1s ease-out (all is written to make all the things that can be transitioned in the button to make the transition there ) : to make transition in 1s from top =273 px to 170px and so now : then if we tick / untick the opacity:1 and top button in element.style together , which was added in inspect , we can see it coming in and out like a transition there : we'll do this later by toggling the top and opacity like this later.*/
+
+    opacity: var(--a); /*step268: we use the variable's value for its opacity now here*/
+    /* step269: we set transition for the play button specifically too now */
+    transition: all 1s;
+    top: 168px;
+}
+
+.card:hover{
+  cursor: pointer;
+  /* step265: we want to change the background color of card when we hover over it. */
+  background-color: rgb(113, 113, 113);
+  /*step269 :we want the green play-button on the playlists to come when we hover cursor over the card there anywhere on it */
+  /* step70: so we set the variable "-a" assigning the opacity of that play button to 1 when hovered over the card */
+  --a:1;
+}
+
+/* step71: design the signup button now */
+.signupbtn{
+    font-weight: bold;
+    /* making it match header's color to make it look like background is invisible until cursor hovered onto it */
+    background-color: rgb(34, 34, 34);
+    color: rgb(118, 118, 118);
+    /* step73: we remove the default styles given to button by browser now and add our own styles to it. */
+    border:none;
+    outline:none;
+    cursor: pointer;
+    font-size: 16px;
+}
+/* step72: when cursor hovers on the signup button then these should happen. */
+.signupbtn:hover{
+    /* make font-size the given times of the html root element(re) OR maybe since default webpage browser gives font size 16px and we've given signup button also 16px above : so lets make it 17px on hovering */
+    /* font-size: 1.01rem; */
+    font-size: 17px;
+    color: white;
+}
+/* step74: give margin not padding now between the direct child element buttons of the class :       ".buttons" to keep spaces between them */
+.buttons > *{
+    margin: 0px 12px;
+}
+
+/* step75 : similarly desgin the login button now. */
+.loginbtn{
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border:none;
+    outline:none;
+    cursor: pointer;
+    width: 80px; /*to make it look a little longer like the webiste */
+    font-size: 16px;
+}
+/* step76: on hovering over this login button */
+.loginbtn:hover{
+    font-weight: bold;
+    font-size: 17px;
+}
+/* step79: make the right section relative so that in next step the playbar can be made at bottom of it ; relative to it. */
+.right{
+    position: relative;
+}
+.playbar{
+    /* step80: make the playbar come at bottom of right section and then design it. */
+    /* can make it fixed too , to make it be sticked at a place and not move here and there with respect to other things. */
+    position: fixed;
+    bottom: 30px;
+    background-color: #e2d9d9;
+    filter: invert(1); /*to invert the color of whole playbar and now looks quite good*/
+    border-radius: 10px; /*add curvy border to it now*/
+    /* width: 93%; : to cover the entire webpage with its width we can put 100% ; but its bringing an unnecessary horizontal scroll-bar ; so we reduce it to fit in the screen */
+    width: 70vw; /*we later by hit and trial see that this makes it better to cover the screen size*/
+    padding:12px;
+    /* step213: make it min-height instead of just height so that it adjusts its height accordingly as needed. */
+    min-height: 40px; /*to make a bit taller in look*/
+}
+
+/* step82: we now make the playbuttons flexbox and make them come at centre with some gaps between its elements too now here. */
+.playbuttons{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    align-items: center; /*step215: we make this to make them look as normal hieght as it was looking larger*/
+}
+
+/* step98 : lets design the ul inside the songlist we made now */
+.songlist ul{
+    /* to give spacing from borders to the text inside it */
+    /* step118: this reduced from 42px to 12px to prevent the texts that was breaking inside the card we making. */
+    padding: 0px 12px; 
+}
+
+.songlist ul li{
+    /* step99: to remove the bullet points from ul and put number there instead */
+    list-style-type: decimal;
+    /* step107: make display flex for all icons and other things in song cards to be in one row not one below the other */
+    display: flex;
+    /* step109: we put some gap between elements of the flexbox */
+    /* step117: we put 12px not 34px gap now : else long song names was breaking the format there */
+    gap: 12px;
+    /*to bring hand when hover cursor over it */
+    cursor:pointer; 
+    /* step110 : to give padding from top bottom to look better. */
+    padding: 12px 0px; 
+    /* step114: now we put border on it with border radius to look like a card */
+    border: 1px solid white;
+    border-radius: 5px;
+    /* step115: give margin to keep all cards at some gaps between them from the other cards there */
+    margin: 12px 0px; /*no need to give margin from left right as its already many there*/
+    /* step116: give some padding too to make the contents come a bit away form the border line */
+    padding: 13px;
+    /* step119: put justify content on inspect and check with arrow keys which value suits best as we want "play now and icon" to be at end of card always */
+    justify-content: space-between;
+}
+
+/* step112: design the playnow class in inspect now > after that whatever you decide is final , paste it here */
+.playnow{
+    /* we make it flexbox and align to keep them in a straight line */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* step113 : adjust the font of span inside the playnow class */
+.playnow span{
+    /* we put random values , then adjust it on inspect and then copy the final values here. */
+    font-size: 16px;
+    width: 64px;
+    /* added padding to make it look a bit seperated form the icons and all */
+    padding: 12px; 
+}
+
+/* step120: we adjust the font size of "info" now */
+.songlist .info{
+    font-size: 13px;
+    /* step121: did trial and error to find best width to make the song info visible best for now */
+    width: 344px; 
+}
+
+/* step244: we saw that in smaller screens and other places too : some song names were not displaying properly and going out : so we do word break to make words to fall to next line if breaking and overflowing from its current width : to fit it forcefully into/in its current width. */
+.info div{
+  word-break: break-all;
+}
+
+.songlist{
+    /* step121: we adjust height to some value by hit and trial in order to get scroll bar upto that height */
+    height:550px;
+    /* step122: this puts a scroll bar automatically when overflow occurs */
+    overflow: auto; 
+    /* step123: but doing so is making the song cards to be just above the footer : so better to give some margin to it : and margin we want form footer only i.e from bottom so lets not give left-right and other margin for now here */
+    margin-bottom: 44px;
+}
+
+.seekbar{
+/* step127: we set the heigth and width and other styles of the seekbar */
+    height: 4px;
+    /* keep it as 98% width as its parent : .playbar */
+    width: 98%; 
+    /* border: 2px solid black; : this done as we have filter invert in playbar set earleir : so setting it black makes it white now */
+    position: absolute; /*as its parent playbar was non-static positioned : so we can make it positioned to whatever we like w.r.t. that playbar there*/
+    bottom: 8px;
+    border-radius: 10px;
+    margin:6px; /*to make its distance from icons too*/
+    background: black; /*step132: invert is there so will look white now : and now the border can be commented out not needed now : a single line for seekbar is looking even more better here.*/
+    cursor:pointer ; /*to bring human hand when brought over it.*/
+}
+/* step129: design the moving circle now in the seekbar */
+.circle{
+    height: 13px;
+    width: 13px;
+    border-radius: 50%; /*putting 50% makes it perfect circle by rule always*/ 
+    background-color: black; /*this done as we have filter invert in playbar set earleir : so setting it black makes it white now*/
+    /* step130: position relative made to make it move from its normal position by default on the webpage to 11px from bottom there to come over the seekbar. */
+    position: relative;
+    bottom: 6px;
+    /* step131: done to make it come at starting left of its parent i.e. seekbar ; when made 100% it will reach the end : so this is the logic we'll use to move the seekbar later too*/
+    left: 0%;
+    /* step133: now we put transition on "left" property of circle here as we saw in step131 : adjusting its left was making circle move on the seekbar ahead.*/
+    /* let say we put the transition for 0.5s now. */
+    transition: left 0.5s;
+}
+
+/* step153: we now make cursor as pointer for the three buttons on the playbar. */
+.playbuttons img{
+  cursor: pointer;
+}
+
+/* step161: lets make it display flex now */
+.abovebar{
+  display: flex;
+  /* step162: we go on inspect > put justify content for it and then using arrow keys see which value suits best for it and then copy that and use it here. */
+  justify-content: space-between;
+  /* step214: give top-bottom margins to this to look cleaner */
+  margin: 20px 0px;
+}
+
+/* step162: give black color to the songinfo and songtime as we had filter invert in playbar which makes black to white and vice-versa. */
+.songinfo {
+  color: black;
+  /* to give it some spacings form left and right but not from top-bottom */
+  padding: 0px 12px; 
+  /* step242: we saw that the song info bar was toggling and changing as songs changed , which we don't want : so we did inspect and by hit and trial set a fixed width 250px to it so that its doesn't move now : we have given width to songtime too so that space can come for volume button on its right there. */
+  width: 250px;
+}
+.songtime{
+  color: black;
+  padding: 0px 12px;
+  width: 125px; /*step248: we adjust its width as per hit and trial needed to adjust the volume button with it in the playbar.*/
+}
+
+/* step247: we make the box containing duration and volume a flexbox firts and give required values that we tested on inpsect and then copy-paste that here. */
+.timevol{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* step197: make hamburger be invisible until device size decreases */
+.hamburger{
+  display: none;
+}
+
+/* step199: we now make the hamburgercontainer class flexbox as told in the last step. */
+.hamburgercontainer{
+  display: flex;
+  /* we make them come in a single line horizontally and vertically so put these */
+  justify-content: center;
+  align-items: center;
+  /* to have gap between elements of the flexbox */
+  gap: 16px;
+}
+
+/* step224: we put this to make cross invisible in general and visible only inside the media query below. */
+.close{
+  display: none;
+}
+
+/* asked chatgpt to change the volume input of type range to change color to orange and since on playbar we had filter invert enabled i asked chatgpt to give a color that become sorange on inverting and then copy pasted that here below. */
+input[type="range"] {
+  accent-color: rgb(0, 90, 255);
+}
+
+
+/* step250: make volume class flexbox to make flex changes as per our need in it */
+.volume{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  /* step339: we make cursor pointer for the volume icon , so that when clicked can be muted later too. */
+  cursor: pointer;
+}
+
+/* step263: to add cursor pointer on the input part i.e. the seekbar of volume inside the volume class made earleir there. */
+.volume input{
+  cursor: pointer;
+}
+
+/* step188: lets add media query to work on the repsonsiveness of the website as the device screen size decreases : use MDN REFERENCE IF YOU FORGET SYNTAX EVER. */ 
+
+/* step189: we see that on decreasing the screen size (keep 50% view for best results) : we see webpage is breaking below 1500px , so lets do that here. */
+@media (max-width: 1500px) {
+  /* step190: we want to make the left section vanish when device screen decreases as later HAMBURGER NAVIGATION will be used to make it come and go in smaller device screens if needed. */
+  .left{
+    /* step191: we make its position absolute : so that it can be made positioned w.r.t to its closest ancestor ".container" that had position set to something , making it non-static positioned ; or if none of its ancestors are non-static positioned ,it will be positioned w.r.t to the entire html webpage now. */
+    position: absolute;
+    /* to make its 100% content to go to left of webpage and vanish */
+    /* step209: made -120% instead of -100% in continuation of as told in last step of this i.e. in the step 208 we told about this : can read from there. */
+    left: -120%; 
+    /* to make it transition in 0.3 sec and vanish all of elements inside the left section too along with it : so applied on all here inside ".left" */
+    transition: all 0.3s; 
+    /* step192: we now want the left section to come over the right section whenever the hamburger navigation is clicked to come over and become visible : so make its z index 1 : to make ".left" to come over the right section.*/
+    z-index: 1;
+    /* step193: this can be checked by decreasing size of device below 1500px and then untick the left -100% button to see how the hamburger will come over the right section when clicked there. */
+
+    /* step201: we set the width of left section by hit and trial to pop up on clicking the hamburger functionality in smaller screen devices. */
+    /* step210: we keep adjusting this too to make it visible in smaller devices like iphone12pro and all too. */
+    width: 373px; 
+    /* step202: background color made black to hide whatever else was being visible at the back */
+    background-color: black;
+    /* step245: we want to remove excess space of black present there in left section around spotify boxes and all around playlist boxes too : so we remove the paddings */
+    padding: 0px;
+    
+    /* step365: this done because it was seen that in smaller devices ; if we scrolled right part with the hamburger open : then it was making the left part also move which we dont want : it should cover 100% of viewport height and stay fixed with 0 distance from the top & since its written for <1500px : it will automatically be applied to smaller devices too untill overriden in its values. */
+    height:100vh;
+    top: 0;
+    position: fixed;
+  }
+
+  /* step205: we now have to adjust the position of cross icon present inside left, to locate/position it at/on the top-right side fo the ".left" as per our choice : so do in inspect & then copy whatever you like the values from there. */
+  /* we have put this inside media query as cross button is needed only when device is small */
+.left .close{
+  /* ".left" ke respect mein now we'll place this cross icon now : so make it absolute position as close is inside left and left is its parent so , it becomes positioned w.r.t left section now.  */
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  /* step223: we now have to hide the cross that is visible even in windows screen. */
+  /* so, we make it block element in smaller device screen but make it visible in general in next step */
+  display: block
+  
+}
+
+    /* step195: but after doing so : we see that right section since was set to 75vw at many places earlier , covers 75% only of screen ; should be made to cover 100% of screen now , when the left section vanishes : so using CTRL+F , we find where all vw has been assigned to it , and then make all of them 100% or 100vw : we see its in right and playbar so lets make it 100 now.*/
+    .right{
+      width: 100vw;
+    }
+    .playbar{
+      /* width: 88vw; */
+      /* step211: now the playbar also need a it lesser width we see in devices like iphone12pro and all so reduced from 95vw to 88vw from inspect hit and trial there and then required value copied back here. */
+
+      /* step217: we now see that the playbar is not as a whole coming at centre so we try to give it 100vw width first and subtract some width then i.e. horizontal side widths obviously. */
+      width: calc(100vw - 60px);
+
+      /* can be made flexbox and centred in smaller devices for seekbar to look centred on the playbar. */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hamburger{
+      /* step196: makes hamburger act like a block-level element once the left side vanishes: otherwise vaise hamburger visibilty was made hidden in next step. */
+      display: block; 
+    }
+    /* step212: we adjust seekbar width too as for smaller devices like iphone12pro form inspect and then required correct value copy pasted here */
+    .seekbar{
+      /* width: 90%; */
+      /*step216: we give it just some less width than the playbar to make it look better as without it wehn it was set to 90% , there was some extra gap coming on right side of seekbar there. */
+      /* width: 87vw; */
+
+      /* step218: now since in previous step we changed width of playbar , lets keep the seekbar width in same way but a bit less width than playbar , so that it remains inside of it : so we subtract instead of 60px , 70px from it : so that more we minus , lesser the width : and width of seekbar should be lesser than playbar only obviously. */
+      width: calc(100vw - 70px);
+    }
+
+    /* step220: make the card's width better as per the device screen's viewport */
+    .card{
+      width: 55vw; /*step360: this also made 44 to 55 as needed for smaller devices.*/
+    }
+    /* step221: remove margin from card-container : to make look even better */
+    .cardContainer{
+      margin: 0;
+         /* step222: done as in iphone12pro , it was not looking all cards coming in centre of screen , so lets make them come centre/central. */
+        justify-content: center;
+        /* step358: we decrease the normal vh in smaller devices that we had earlier to look better. */
+        max-height: 50vh;
+    }
+
+    /* step225: we now make the margin 0 for .right in small devices to remove the extra things coming from top and all in the playlists section */
+    .right{
+      margin: 0;
+    }
+      /* step26: we adjust the ".abovebar" in smaller devices now : by making all the items of playbar appear one below the other for song info and all to be visible more clearly */
+    .abovebar{
+        flex-direction: column;
+        gap:23px;
+        align-items: center;
+
+    }
+    .songinfo{
+    /* step243: we did in step242 to set width of songinfo : but its breaking when device size is changing : so lets make its width to auto set when device size changing in media query here. */
+      width: auto;
+    }    
+    /* step252: we want in mobile devices to look as one below the other to look better: so change flex direction here in media query as follows-- */
+    .timevol{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap:13px
+    }
+    /* this done to remove scroll bar that was covering extra spaces in tabs and other smaller devices unnecessarily */
+    .cardContainer{
+    max-height: unset;
+    overflow-y: unset;
+    margin-bottom: 30vh;
+  }
+  /* can be given to make header look good on small devices , seperated form the upper borders. */
+  .header{
+    padding: 7px;
+  }
+}
+
+/* step264: can make the cards bigger when in smaller iphone12pro and all that has width < 500 seen in top of dimensions when we select iphone12pro in inspect > device emulation during responsiveness testing. */
+@media (max-width:500px){
+  .card{
+    width:100%; /*step359: set to 100% to adjust in smaller devices*/
+  }
+  .cardContainer{
+    max-height: unset;
+    overflow-y: unset;
+    margin-bottom: 30vh;
+  }
+  .spotifyplaylist h1{
+    padding: 4px;
+  }
+}
+
+/* step360: we set the media query for <387px now upon seeing the responsiveness on the website. */
+@media(max-width:387px){
+
+  .card{
+    width: 100%;
+  }
+    .header>*{
+        padding: 12px;
+    }
+    .buttons>*{
+      margin: 0px 6px;
+    }
+    .left{
+      left:-133%;
+      width:348px; /*for hamburger to be in the screen size only when opened*/
+    }
+    .cardContainer{
+    max-height: unset;
+    overflow-y: unset;
+    margin-bottom:30vh; /*we put this as smaller devices were not having the cards fully being shoen above the playbar and were getting hidden by the playbar behind it : so to resolve that , we did this.*/
+  }
+  .spotifyplaylist h1{
+    padding: 4px;
+  }
+}
+/* step361: add more adjustments as the size of device decreases more */
+@media(max-width:337px){
+    .card{
+      width: 100%;
+    }
+    .header>*{
+        padding: 4px;
+    }
+    .buttons>*{
+      margin: 0px 6px;
+    }
+    .left{
+      left:-133%;
+      width:348px; /*for hamburger to be in the screen size only when opened*/
+    }
+    .cardContainer{
+    max-height: unset;
+    overflow-y: unset;
+    margin-bottom:30vh; /*we put this as smaller devices were not having the cards fully being shoen above the playbar and were getting hidden by the playbar behind it : so to resolve that , we did this.*/
+  }
+  .spotifyplaylist h1{
+    padding: 4px;
+  }
+}
+/* step362: add more adjustments as the size of device decreases more */
+@media(max-width:300px){
+    .card{
+      width: 100%;
+    }
+    .header>*{
+        padding: 0px;
+    }
+    .buttons>*{
+      margin: 0px 6px;
+    }
+    .left{
+      left:-133%;
+      width:300px; /*for hamburger to be in the screen size only when opened*/
+    }
+    /* step363: done in alls maller dveices to hide scroll bar as in smaller devices we have very less space , so putting scroll bar there will occupy more space unnecessarily; device's original scroll bar will work instead of the one we gave now. */
+    .cardContainer{
+    max-height: unset;
+    overflow-y: unset;
+    margin-bottom:30vh; /*we put this as smaller devices were not having the cards fully being shoen above the playbar and were getting hidden by the playbar behind it : so to resolve that , we did this.*/
+  }
+  /* step364: done by hit and trial and set in all less than 500px devices */
+  .spotifyplaylist h1{
+    padding: 4px;
+  }
+  .library{
+    height:85vh;
+  }
+  .left{
+    /* step366: after step365 : we make width to 100% of viewport so that in smaller devices hamburger when opened covers full screen , and not shows right section : will show it only when we press the cross icon there we made. */
+    width: 100vw;
+  }
+}
+
+/* STEP370: FINALLY IF YOU WANT TO RELOCATE THE GREEN PLAY BUTTON ON CARDS ON MUCH SMALLER DEVICES : GO ON INSPECT > SELECT THAT CARD > CLICK ON :HOV THERE IN TOP RIGHT SIDE IN THE INSPECT SECTION AND THEN YOU CAN SEE ITS LOCATION IN DIFFERENT DEVICES AND ADJUST IF NEEDED AS FOLLOWS-- */
+
+/* we needed adjusting only for smaller than 247px we saw from seeing responsiveness there by increasing/decreasing the device screen's size there. */
+@media(max-width:247px){
+  .play-button{
+    top: 160px;
+  }
+}
+/* AND SIMILARLY CAN DO FOR MORE SMALLER WIDTH DEVICES TOO : HOWEVER USUALLY / MOSTLY : THOSE TYPE OF DEVICES NOT EXIST SO NOTHING MUCH TO WORRY ABOUT THAT .😊😁 */
+
+/* FINALLY PROJECT COMPLETED IN THESE APPROXIMATELY 370 SETPS !!!!! 🎉🍾🎊🎉🍾*/
+
+
+
